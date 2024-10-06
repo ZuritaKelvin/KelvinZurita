@@ -1,0 +1,57 @@
+---
+import HTMLIcon from '../components/icons/HTMLIcon.astro';	
+import JSIcon from '../components/icons/JSIcon.astro';
+import Github from './icons/Github.astro';
+import LinkButton from './LinkButton.astro';
+import PreviewIcon from './icons/PreviewIcon.astro';
+const TAGS = {
+    HTML: {
+        name: 'HTML',
+        class: 'bg-black text-white',
+        icon: HTMLIcon,
+    },
+    JS: {
+        name: 'JavaScript',
+        class: 'bg-black text-white',
+        icon: JSIcon,
+    }
+};
+const PROJECTS = [
+    {
+      title: 'Clon de MonkeyType',
+      description: `Clon de la conocida plataforma monkeytype
+      para mejorar la rapidez y fluidez al escribir`,
+      link: 'https://zuritakelvin.github.io/TypeFaster/',
+      github: 'https://github.com/ZuritaKelvin/TypeFaster',
+      image: '/projects/monkeyType.png',
+      tags: [TAGS.HTML, TAGS.JS],
+    },
+]
+---
+{
+  PROJECTS.map((project) => (
+   <article>
+   <h3 class="text-2xl font-semibold text-blue-200 mb-2">{project.title}</h3>
+   <p class="text-lg mb-4 text-pretty">{project.description}</p>
+   <ul class="flex gap-x-4 flex-row">
+    {
+      project.tags.map((tag) => (
+        <li><span class={`flex gap-x-2 rounded-full text-xs py-2 px-2 items-center ${tag.class}`}>
+            <tag.icon /> {tag.name}</span></li>
+      ))
+    }
+   </ul>
+   <img src={project.image} alt={project.title} class="rounded shadow-2xl shadow-sky-400/10 my-2">
+   <footer class="flex gap-x-2 flex-row">
+    <LinkButton>
+    <PreviewIcon />
+    Go Live
+    </LinkButton>
+    <LinkButton>
+    <Github />
+    Github
+    </LinkButton>
+   </footer>
+   </article>
+  ))
+}

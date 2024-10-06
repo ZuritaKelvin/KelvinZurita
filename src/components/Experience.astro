@@ -1,0 +1,24 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+      date: 'Actualmente...',
+      title: 'Desarrollador Full Stack',
+      description: `Trabajando como desarrollador full stack.
+      En una empresa enfocada en crear y diseñar software dedicado para
+      ofrecer un producto que satisface las necesidades especificas del cliente.`,  
+      link: 'https://www.devontic.com/',
+    },
+]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">                  
+    {
+        EXPERIENCE.map((item) => (
+            <ExperienceItem
+              {...item}
+            />
+        ))
+    }
+</ol>
+
