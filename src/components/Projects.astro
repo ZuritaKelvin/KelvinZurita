@@ -43,11 +43,11 @@ const PROJECTS = [
    </ul>
    <img src={project.image} alt={project.title} class="rounded shadow-2xl shadow-sky-400/10 my-2">
    <footer class="flex gap-x-2 flex-row">
-    <LinkButton>
+    <LinkButton href={project.link} target="_blank">
     <PreviewIcon />
     Go Live
     </LinkButton>
-    <LinkButton>
+    <LinkButton href={project.github} target="_blank">
     <Github />
     Github
     </LinkButton>
