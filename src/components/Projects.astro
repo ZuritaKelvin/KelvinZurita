@@ -3,6 +3,9 @@ import HTMLIcon from '../components/icons/HTMLIcon.astro';
 import JSIcon from '../components/icons/JSIcon.astro';
 import Github from './icons/Github.astro';
 import LinkButton from './LinkButton.astro';
+import ShadCnICON from './icons/ShadCnICON.astro';
+import NextJSIcon from './icons/NextJSIcon.astro';
+import SupabaseIcon from './icons/SupabaseIcon.astro';
 import PreviewIcon from './icons/PreviewIcon.astro';
 const TAGS = {
     HTML: {
@@ -14,9 +17,30 @@ const TAGS = {
         name: 'JavaScript',
         class: 'bg-black text-white',
         icon: JSIcon,
+        },
+    SHADCN: {
+    name: 'ShadCn/UI',
+        class: 'bg-black text-white',
+        icon: ShadCnICON,
+        },
+    NEXTJS: {
+        name: 'Next JS',
+        class: 'bg-black text-white',
+        icon: NextJSIcon,
+        },
+    SUPABASE: {
+        name: 'Supabase',
+        class: 'bg-black text-esmerald-800',
+        icon: SupabaseIcon,
     }
 };
 const PROJECTS = [
+    {
+      title: 'AuraBill',
+      description: `Aplicacion web para la administracion y gestion de facturacion con inplementacion de AI para la digitalizacion y generacion de facturas`,
+      image: '/projects/monkeyType.png',
+      tags: [TAGS.SHADCN, TAGS.NEXTJS,TAGS.SUPABASE],
+    },
     {
       title: 'Clon de MonkeyType',
       description: `Clon de la conocida plataforma Monkeytype para mejorar la rapidez y fluidez al escribir`,
@@ -29,13 +53,13 @@ const PROJECTS = [
 ---
 {
   PROJECTS.map((project) => (
-   <article>
+   <article class="my-1">
    <h3 class="text-2xl font-semibold text-blue-200 mb-2">{project.title}</h3>
    <p class="text-lg mb-4 text-pretty text-white">{project.description}</p>
-   <ul class="flex gap-x-4 flex-row">
+   {project.link && project.github && project.image ? (   <ul class="flex gap-x-4 flex-row">
     {
       project.tags.map((tag) => (
-        <li><span class={`flex gap-x-2 rounded-full text-xs py-2 px-2 items-center ${tag.class}`}>
+        <li><span class={`flex gap-x-2 rounded-full text-xs py-2 px-3 items-center ${tag.class}`}>
             <tag.icon /> {tag.name}</span></li>
       ))
     }
@@ -51,6 +75,7 @@ const PROJECTS = [
     Github
     </LinkButton>
    </footer>
+   ) : (<span class="py-2 font-bold text-gray-500">In Progress...</span>)}
    </article>
   ))
 }
