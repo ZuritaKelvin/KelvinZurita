@@ -1,15 +1,26 @@
-<header class="justify-between flex xl:w-[920px] w-3/4 py-5 items-center mx-auto">
-<button class="md:flex hidden">
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-letter-z" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M10 8h4l-4 8h4" />
-        <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
-      </svg>
-</button>
-      <nav class="flex flex-row sm:gap-x-10 gap-x-3 opacity-80 text-white">
-        <a href="/">Inicio</a>
-        <a href="/#experience">Experiencia</a>
-        <a href="/#projects">Proyectos</a>
-        <a href="/#about" class="text-nowrap">Sobre mi</a>
+<header class="fixed inset-x-0 top-0 z-50">
+  <div class="mx-auto mt-4 flex w-[min(860px,calc(100%-1rem))] items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-3 py-3 backdrop-blur-xl md:px-4">
+    <a href="/" class="flex items-center gap-3 text-white">
+      <span class="flex h-10 w-10 items-center justify-center text-zinc-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-letter-z" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M10 8h4l-4 8h4" />
+          <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+        </svg>
+      </span>
+      <span>
+        <span class="block text-sm font-semibold tracking-[0.18em] text-slate-200">KELVIN ZURITA</span>
+        <span class="block text-xs text-slate-400">Full Stack Developer</span>
+      </span>
+    </a>
+
+    <nav class="flex flex-wrap items-center justify-end gap-2 text-sm font-medium text-zinc-400 md:gap-3">
+      <a href="/" class="rounded-full px-3 py-2 hover:bg-white/5 hover:text-white">Inicio</a>
+      <a href="/#experience" class="rounded-full px-3 py-2 hover:bg-white/5 hover:text-white">Experiencia</a>
+      <a href="/#skills" class="rounded-full px-3 py-2 hover:bg-white/5 hover:text-white">Skills</a>
+      <a href="/#projects" class="rounded-full px-3 py-2 hover:bg-white/5 hover:text-white">Proyectos</a>
+      <a href="/#about" class="rounded-full px-3 py-2 text-nowrap hover:bg-white/5 hover:text-white">Sobre mí</a>
+      <a href="/#contact" class="rounded-full px-3 py-2 text-nowrap hover:bg-white/5 hover:text-white">Contacto</a>
     </nav>
+  </div>
 </header>

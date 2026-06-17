@@ -10,20 +10,66 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Portafolio de Kelvin Zurita, desarrollador full stack enfocado en crear productos digitales funcionales, escalables y con una gran experiencia de usuario." />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Kelvin Zurita" />
+		<meta name="keywords" content="Full Stack Developer, Web Developer, React, Node.js, TypeScript, Portfolio" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://kelvinzurita.dev/" />
+		<meta property="og:title" content="Kelvin Zurita - Full Stack Developer" />
+		<meta property="og:description" content="Desarrollador full stack con 2+ años de experiencia construyendo productos digitales funcionales, escalables y con gran experiencia de usuario." />
+		<meta property="og:image" content="/og-image.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://kelvinzurita.dev/" />
+		<meta property="twitter:title" content="Kelvin Zurita - Full Stack Developer" />
+		<meta property="twitter:description" content="Desarrollador full stack con 2+ años de experiencia construyendo productos digitales funcionales, escalables y con gran experiencia de usuario." />
+		<meta property="twitter:image" content="/og-image.png" />
+
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<div class="absolute top-0 z-[-2] h-full w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+	<body class="selection:bg-white/10 selection:text-white">
+		<div class="pointer-events-none fixed inset-0 z-[-3] bg-[#0b0d11]"></div>
+		<div class="pointer-events-none fixed inset-0 z-[-2] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.05),transparent_20%),linear-gradient(180deg,#111318_0%,#0b0d11_100%)]"></div>
+		<div class="pointer-events-none fixed inset-0 z-[-1] bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(circle_at_top,black,transparent_78%)] opacity-15"></div>
 		<Header />
 		<slot />
 		<Footer />
+		<script is:inline>
+			const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+			const revealElements = Array.from(document.querySelectorAll('[data-reveal]'));
+
+			const revealNow = () => {
+				revealElements.forEach((element) => element.setAttribute('data-reveal-visible', 'true'));
+			};
+
+			if (reduceMotion.matches || !('IntersectionObserver' in window)) {
+				revealNow();
+			} else {
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							entry.target.setAttribute('data-reveal-visible', entry.isIntersecting ? 'true' : 'false');
+						});
+					},
+					{
+						threshold: 0.18,
+						rootMargin: '0px 0px -10% 0px',
+					}
+				);
+
+				revealElements.forEach((element) => observer.observe(element));
+			}
+		</script>
 	</body>
 </html>
 <style is:global>
@@ -56,16 +102,84 @@ const { title } = Astro.props;
 	}
 	body {
 		position: relative;
-		background: #13151a;
+		background: #0b0d11;
 		display: flex;
 		flex-direction: column;
-		place-content: center;
 		min-height: 100vh;
 		scroll-behavior: smooth;
+		color: #f8fafc;
+	}
+	a {
+		transition:
+			color 180ms ease,
+			border-color 180ms ease,
+			background-color 180ms ease,
+			transform 180ms ease,
+			opacity 180ms ease,
+			box-shadow 180ms ease;
+	}
+	main {
+		width: min(860px, calc(100% - 2rem));
+		margin: 0 auto;
+		padding: 7rem 0 8rem;
+	}
+	.section-shell {
+		width: 100%;
+		margin: 0 auto 2rem;
+		padding: 1.25rem 0 1.75rem;
+		border: 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 0;
+		background: transparent;
+		backdrop-filter: none;
+		box-shadow: none;
+	}
+	.section-heading {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 1.5rem;
+		font-size: 1.5rem;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+	}
+	.section-heading svg {
+		color: #d4d4d8;
+	}
+	[data-reveal] {
+		opacity: 0;
+		transform: translateY(22px);
+		filter: blur(6px);
+		transition:
+			opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+			transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+			filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
+		transition-delay: var(--reveal-delay, 0ms);
+		will-change: opacity, transform, filter;
+	}
+	[data-reveal-visible='true'] {
+		opacity: 1;
+		transform: translateY(0);
+		filter: blur(0);
+	}
+	@media (min-width: 768px) {
+		main {
+			padding-top: 8.5rem;
+		}
+		.section-shell {
+			padding: 1.5rem 0 2.25rem;
+			margin-bottom: 2.5rem;
+		}
 	}
 	@media(prefers-reduced-motion: reduce) {
 		html {
 			scroll-behavior: auto;
+		}
+		[data-reveal] {
+			opacity: 1;
+			transform: none;
+			filter: none;
+			transition: none;
 		}
 	}
 </style>

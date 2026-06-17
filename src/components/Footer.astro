@@ -1,19 +1,53 @@
-
-<footer class="rounded-md backdrop-blur-lg shadow bg-black/20 lg:w-[740px] w-5/6 items-center mx-auto md:fixed bottom-0 left-0 right-0 h-12 relative ">
-  <div class="w-full mx-auto max-w-screen-xl sm:p-4 py-2 block md:flex place-content-center">
-    <ul class="flex flex-row items-center mt-3 text-sm font-medium text-white dark:text-gray-400 sm:mt-0">
-        <li>
-            <a href="/" class="hover:underline me-4 md:me-6">Inicio</a>
-        </li>
-        <li>
-            <a href="#experience" class="hover:underline me-4 md:me-6">Experiencia</a>
-        </li>
-        <li>
-            <a href="#projects" class="hover:underline me-4 md:me-6">Proyectos</a>
-        </li>
-        <li>
-            <a href="#about" class="hover:underline me-4 md:me-6">Sobre mi</a>
-        </li>
-    </ul>
+<footer class="mt-auto border-t border-white/10 bg-white/5">
+    <div class="mx-auto w-[min(860px,calc(100%-1rem))] px-4 py-8">
+        <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+            <div class="flex items-center gap-3">
+                <span class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-zinc-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M10 8h4l-4 8h4" />
+                        <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+                    </svg>
+                </span>
+                <div>
+                    <p class="text-sm font-medium text-white">Kelvin Zurita</p>
+                    <p class="text-xs text-zinc-500">Full Stack Developer</p>
+                </div>
+            </div>
+            
+            <nav class="flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-400" aria-label="Redes sociales">
+                <a 
+                    href="https://www.linkedin.com/in/kelvin-zurita-0768541b0" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="hover:text-white transition-colors"
+                    aria-label="LinkedIn"
+                >
+                    LinkedIn
+                </a>
+                <span class="text-white/20" aria-hidden="true">•</span>
+                <a 
+                    href="https://github.com/ZuritaKelvin" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="hover:text-white transition-colors"
+                    aria-label="GitHub"
+                >
+                    GitHub
+                </a>
+                <span class="text-white/20" aria-hidden="true">•</span>
+                <a 
+                    href="mailto:kelvinzurita2015@gmail.com" 
+                    class="hover:text-white transition-colors"
+                    aria-label="Correo electrónico"
+                >
+                    Email
+                </a>
+            </nav>
+            
+            <p class="text-xs text-zinc-500">
+                © {new Date().getFullYear()} Kelvin Zurita
+            </p>
+        </div>
     </div>
 </footer>
