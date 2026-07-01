@@ -1641,6 +1641,7 @@ packages:
 
   'portfoliodev@file:':
     resolution: {directory: '', type: directory}
+    engines: {node: 22.x}
 
   postcss-import@15.1.0:
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}

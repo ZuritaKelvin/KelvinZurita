@@ -7,7 +7,10 @@ import ShadCnICON from './icons/ShadCnICON.astro';
 import NextJSIcon from './icons/NextJSIcon.astro';
 import SupabaseIcon from './icons/SupabaseIcon.astro';
 import PreviewIcon from './icons/PreviewIcon.astro';
-
+import SqliteIcon from './icons/SqliteIcon.astro';
+import RustIcon from './icons/RustIcon.astro';
+import TauriIcon from './icons/TauriIcon.astro';
+import ViteIcon from './icons/ViteIcon.astro';
 const TAGS = {
     HTML: {
         name: 'HTML',
@@ -29,26 +32,48 @@ const TAGS = {
         class: 'bg-black text-white',
         icon: NextJSIcon,
     },
+    VITE: {
+        name: 'Vite',
+        class: 'bg-black text-white',
+        icon: ViteIcon,
+    },
     SUPABASE: {
         name: 'Supabase',
         class: 'bg-black text-white',
         icon: SupabaseIcon,
-    }
+    },
+    SQLITE: {
+        name: 'Sqlite',
+        class: 'bg-black text-white',
+        icon: SqliteIcon,
+    },
+    TAURI: {
+        name: 'Tauri',
+        class: 'bg-black text-white',
+        icon: TauriIcon,
+    },
+    RUST: {
+        name: 'Rust',
+        class: 'bg-black text-white',
+        icon: RustIcon,
+    },
 };
 
 const PROJECTS = [
     {
         title: 'AuraBill',
         description: 'Aplicación web para la administración y gestión de facturación con implementación de IA para la digitalización y generación automatizada de facturas.',
+        updateNote: 'Actualización · 1 de julio de 2026: estoy trabajando para convertir AuraBill en una app para Windows que funcione en local, sin necesidad de conexión a internet, con exportación/importación de datos entre dispositivos y opciones para compartirlos en red local.',
         link: null,
         github: null,
         image: null,
-        tags: [TAGS.SHADCN, TAGS.NEXTJS, TAGS.SUPABASE],
+        tags: [TAGS.SHADCN, TAGS.VITE, TAGS.SQLITE, TAGS.TAURI, TAGS.RUST],
         inProgress: true,
     },
     {
         title: 'Clon de MonkeyType',
         description: 'Clon de la conocida plataforma Monkeytype para mejorar la rapidez y fluidez al escribir. Implementado con HTML, CSS y JavaScript vanilla.',
+        updateNote: null,
         link: 'https://zuritakelvin.github.io/TypeFaster/',
         github: 'https://github.com/ZuritaKelvin/TypeFaster',
         image: '/projects/monkeyType.png',
@@ -79,6 +104,11 @@ const PROJECTS = [
                         <p class="mt-2 text-sm leading-relaxed text-zinc-400">
                             {project.description}
                         </p>
+                        {project.updateNote && (
+                            <p class="mt-3 rounded-xl border border-blue-400/20 bg-blue-400/10 px-4 py-3 text-sm leading-relaxed text-blue-100">
+                                {project.updateNote}
+                            </p>
+                        )}
                     </div>
                 </div>
 
